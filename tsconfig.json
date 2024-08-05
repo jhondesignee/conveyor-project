@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "target": "esnext",
+    "strict": true,
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "isolatedModules": true,
+    "checkJs": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+    "paths": {
+      "#core/*": ["core/*.ts"]
+    }
+  },
+  "include": ["core/**/*", "client/**/*", "tests/**/*"]
+}
