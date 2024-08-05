@@ -2,8 +2,7 @@ import { describe, expect, test } from "vitest"
 import Factory from "#core/common/factory"
 
 class Test {
-  // @ts-expect-error
-  private readonly value: number
+  public readonly value: number
 
   constructor(value: number) {
     this.value = value
