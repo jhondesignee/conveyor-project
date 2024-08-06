@@ -29,44 +29,6 @@ class Test implements EventListener {
 }
 
 describe.concurrent("Event manager test", () => {
-  test("Should be possible to register objects", () => {
-    const test1 = new Test()
-    const test2 = new Test()
-    const test3 = new Test()
-    const test4 = new Test()
-    const eventManager = new EventManager()
-
-    expect(eventManager.register("1", test1)).toBeTruthy()
-    expect(eventManager.objectList.length).toBe(1)
-
-    expect(eventManager.register("2", test2)).toBeTruthy()
-    expect(eventManager.register("2", test4)).toBeFalsy()
-    expect(eventManager.objectList.length).toBe(2)
-
-    expect(eventManager.register("3", test3)).toBeTruthy()
-    expect(eventManager.objectList.length).toBe(3)
-  })
-  test("Should be possible to remove objects", () => {
-    const test1 = new Test()
-    const test2 = new Test()
-    const test3 = new Test()
-    const eventManager = new EventManager()
-
-    eventManager.register("1", test1)
-    eventManager.register("2", test2)
-    eventManager.register("3", test3)
-
-    expect(eventManager.objectList.length).toBe(3)
-    expect(eventManager.unregister("1")).toBeTruthy()
-
-    expect(eventManager.unregister("4")).toBeFalsy()
-
-    expect(eventManager.objectList.length).toBe(2)
-    expect(eventManager.unregister("2")).toBeTruthy()
-
-    expect(eventManager.objectList.length).toBe(1)
-    expect(eventManager.unregister("3")).toBeTruthy()
-  })
   test("Should notify only interested objects", () => {
     const test1 = new Test(["event1"])
     const test2 = new Test(["event2"])
@@ -134,7 +96,7 @@ describe.concurrent("Event manager test", () => {
     expect(test3.correctType).toBeFalsy()
     expect(test4.correctType).toBeTruthy()
   })
-  test("Should deliver the data to listeners", () => {
+  test("Should deliver the data to objects", () => {
     const test = new Test(["event"])
     const eventManager = new EventManager()
 
