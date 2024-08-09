@@ -9,7 +9,7 @@ class Test {
   }
 }
 
-describe("Factory class test", () => {
+describe.concurrent("Factory class test", () => {
   test("Factory should be able to store multiple instances", () => {
     const factory = new Factory<typeof Test>(Test, [1])
     expect(factory.getInstances().length).toBe(0)

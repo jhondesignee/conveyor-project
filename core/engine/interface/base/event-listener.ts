@@ -1,3 +1,9 @@
+export interface EventPayload {
+  type: string
+  data: Record<string, unknown>
+}
+
 export default interface EventListener {
-  onEvent?(type: unknown, data: unknown): void
+  get events(): Array<string>
+  onEvent?(payload: EventPayload): void
 }

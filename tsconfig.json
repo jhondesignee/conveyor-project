@@ -25,5 +25,5 @@
       "#core/*": ["core/*.ts"]
     }
   },
-  "include": ["core/**/*", "client/**/*", "tests/**/*"]
+  "include": ["core/**/*", "client/**/*", "tests/**/*", "types/**/*.d.ts"]
 }
